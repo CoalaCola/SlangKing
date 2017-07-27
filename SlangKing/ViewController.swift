@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginButton:FBSDKLoginButton! = {
+        let button = FBSDKLoginButton()
+        button.readPermissions = ["email"]
+        return button
+    }()
+   
+    
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        view.addSubview(loginButton)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -22,4 +34,5 @@ class ViewController: UIViewController {
 
 
 }
+
 
